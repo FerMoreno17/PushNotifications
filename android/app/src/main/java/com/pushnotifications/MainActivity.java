@@ -1,4 +1,4 @@
-package com.pushnotifications;
+package com.notificationpush.android;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

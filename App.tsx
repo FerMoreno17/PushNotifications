@@ -21,14 +21,6 @@ function App(): JSX.Element {
           authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
           authStatus === messaging.AuthorizationStatus.PROVISIONAL;
         if (enabled) {
-          // messaging()
-          //   .getAPNSToken()
-          //   .then(async apnsToken => {
-          //     console.log({apnsToken});
-          //     const token = await messaging().getToken();
-          //     // updating token to firestore or database
-          //     setPushToken(token);
-          //   });
           getToken();
         }
       })
@@ -42,6 +34,7 @@ function App(): JSX.Element {
 
   const getToken = async () => {
     try {
+      console.log('try');
       await messaging().requestPermission(); // IMPORTANT!
       await messaging().registerDeviceForRemoteMessages(); // IMPORTANT!
       let token = await messaging().getToken();
